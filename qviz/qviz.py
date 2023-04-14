@@ -14,7 +14,7 @@ except:
 def main():
     # パスのread
     print("csvファイルまたはxlsxファイルをドラッグして下さい。")
-    path = input().strip("'")
+    path = input().strip().strip("'")
 
     # csvをread
     if ".csv" in path:
