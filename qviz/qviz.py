@@ -1,26 +1,33 @@
 import os
 import subprocess
+import sys
+
 
 try:
     import pandas as pd
     import pygwalker as pyg
 except:
-    print("'pip install pandas'と'pip install pygwalker'を実行してください。")
+    print("エラー！'pip install pandas'と'pip install pygwalker'を実行してください。")
+    sys.exit(1)
 
 
 def main():
-    # パスのリード
-    print("csvファイルをドラッグして下さい。")
+    # パスのread
+    print("csvファイルまたはxlsxファイルをドラッグして下さい。")
     path = input().strip("'")
 
-    # csvの判定
-    assert ".csv" in path, "csvファイルではありません。"
-
     # csvをread
-    try:
-        df = pd.read_csv(path, encoding="utf-8")
-    except:
-        df = pd.read_csv(path, encoding="cp932")
+    if ".csv" in path:
+        try:
+            df = pd.read_csv(path, encoding="utf-8")
+        except:
+            df = pd.read_csv(path, encoding="cp932")
+    # xlsxをread
+    elif ".xlsx" in path:
+        df = pd.read_excel(path)
+    else:
+        print("エラー！対応していないファイル形式です。")
+        sys.exit(1)
 
     # pyg walkerをhtml化
     viz = pyg.to_html(df)
@@ -42,7 +49,6 @@ def main():
     # htmlを出力
     with open(path, mode="w", encoding="utf-8") as f:
         f.write(viz)
-
     # htmlをopen
     subprocess.call(["open", path])
 
