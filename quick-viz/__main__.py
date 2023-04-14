@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 import pygwalker as pyg
-import webbrowser
+import subprocess
 
 df = pd.read_csv("quick-viz/sample_data/titanic_train.csv", encoding="utf-8")
 viz = pyg.to_html(df)
@@ -21,4 +21,4 @@ path = os.path.abspath("quick-viz/output/quick-viz.html")
 with open(path, mode="w", encoding="utf-8") as f:
     f.write(viz)
 
-webbrowser.open(path)
+subprocess.call(['open', path])
