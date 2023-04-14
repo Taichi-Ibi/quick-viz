@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="sample_command",
-    version="0.1.4",
+    version="0.1.5",
     author="t.ibi, y.yuji, y.wada",
     author_email="t.ibi@estyle-inc.jp",
     description="Vizualize CSV quickly",
@@ -18,6 +18,6 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    entry_points={"console_scripts": ["qviz = quick-viz.quick-viz:main"]},
-    python_requires=">=3.7",
+    entry_points={"console_scripts": ["qviz = qviz.qviz:main"]},
+    python_requires=">=3.8",
 )
