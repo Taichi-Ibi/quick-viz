@@ -3,10 +3,13 @@ import pandas as pd
 import pygwalker as pyg
 import subprocess
 
-print('csvファイルをドラッグして下さい')
+print("csvファイルをドラッグして下さい")
 path = input()[1:-1]
 
-df = pd.read_csv(path, encoding="utf-8")
+try:
+    df = pd.read_csv(path, encoding="utf-8")
+except:
+    df = pd.read_csv(path, encoding="CP932")
 viz = pyg.to_html(df)
 
 header = """
@@ -24,4 +27,4 @@ path = os.path.abspath("quick-viz/output/quick-viz.html")
 with open(path, mode="w", encoding="utf-8") as f:
     f.write(viz)
 
-subprocess.call(['open', path])
+subprocess.call(["open", path])
