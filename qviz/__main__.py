@@ -6,7 +6,7 @@ import pygwalker as pyg
 
 # パスのリード
 print("csvファイルをドラッグして下さい。")
-path = input()[1:-1]
+path = input().strip("'")
 
 # csvの判定
 assert ".csv" in path, "csvファイルではありません。"
