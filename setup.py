@@ -18,6 +18,6 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    entry_points={"console_scripts": ["qviz = qviz.qviz:main"]},
+    entry_points={"console_scripts": ["qviz = qviz:main"]},
     python_requires=">=3.7",
 )
