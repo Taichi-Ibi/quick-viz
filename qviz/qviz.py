@@ -1,8 +1,11 @@
 import os
 import subprocess
 
-import pandas as pd
-import pygwalker as pyg
+try:
+    import pandas as pd
+    import pygwalker as pyg
+except:
+    print("'pip install pandas'と'pip install pygwalker'を実行してください。")
 
 
 def main():
