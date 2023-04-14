@@ -15,7 +15,7 @@ assert ".csv" in path, "csvファイルではありません。"
 try:
     df = pd.read_csv(path, encoding="utf-8")
 except:
-    df = pd.read_csv(path, encoding="CP932")
+    df = pd.read_csv(path, encoding="cp932")
 
 # pyg walkerをhtml化
 viz = pyg.to_html(df)
