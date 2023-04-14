@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 quick-viz/.DS_Store
 *.html
+quick-viz/output/quick-viz.html
