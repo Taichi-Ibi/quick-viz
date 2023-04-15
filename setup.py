@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="sample_command",
+    name="quick-viz",
     version="0.3.0",
     author="t.ibi, y.yuji, y.wada",
     author_email="t.ibi@estyle-inc.jp",
