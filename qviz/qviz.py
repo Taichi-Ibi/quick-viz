@@ -11,6 +11,11 @@ except:
     sys.exit(1)
 
 
+def main():
+    input_path = get_path()
+    launch(input_path)
+
+
 def get_path():
     # 引数ありで実行されているか確認
     is_argv = len(sys.argv) > 1
@@ -25,7 +30,7 @@ def get_path():
     return input_path
 
 
-def main(input_path=None):
+def launch(input_path=None):
     # 半角スペースやクォーテーションを削除
     path = input_path.strip().strip("'")
 
@@ -67,5 +72,4 @@ def main(input_path=None):
 
 
 if __name__ == "__main__":
-    input_path = get_path()
-    main(input_path)
+    main()
