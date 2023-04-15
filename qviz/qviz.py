@@ -11,9 +11,9 @@ except:
     sys.exit(1)
 
 
-def qviz():
+def main():
     input_path = get_path()
-    launch(input_path)
+    qviz(input_path)
 
 
 def get_path():
@@ -30,7 +30,7 @@ def get_path():
     return input_path
 
 
-def launch(input_path=None):
+def qviz(input_path=None):
     # 半角スペースやクォーテーションを削除
     path = input_path.strip().strip("'")
 
