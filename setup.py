@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="sample_command",
-    version="0.2.1",
+    version="0.2.2",
     author="t.ibi, y.yuji, y.wada",
     author_email="t.ibi@estyle-inc.jp",
     description="Vizualize CSV quickly",
