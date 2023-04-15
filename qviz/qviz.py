@@ -1,6 +1,7 @@
 import os
 import sys
 import subprocess
+from typing import Optional
 
 # サードパーティー製ライブラリのインポート
 try:
@@ -11,12 +12,18 @@ except:
     sys.exit(1)
 
 
-def main():
+def main() -> None:
+    """コマンド実行時の関数"""
+
     input_path = get_path()
     qviz(input_path)
 
+    return None
 
-def get_path():
+
+def get_path() -> str:
+    """引数またはinputによりファイルパスを受け取る関数"""
+
     # 引数ありで実行されているか確認
     is_argv = len(sys.argv) > 1
 
@@ -27,10 +34,13 @@ def get_path():
         # 引数なしの場合、inputしてもらう
         print("csvファイルまたはxlsxファイルをドラッグして下さい。")
         input_path = input()
+
     return input_path
 
 
-def qviz(input_path=None):
+def qviz(input_path: Optional[str] = None) -> None:
+    """ファイルをpygwalkerに渡してブラウザで開く関数"""
+
     # 半角スペースやクォーテーションを削除
     path = input_path.strip().strip("'")
 
@@ -44,7 +54,7 @@ def qviz(input_path=None):
     elif ".xlsx" in path:
         df = pd.read_excel(path)
     else:
-        print("エラー！対応していないファイル形式です。")
+        print("エラー！対応していないファイル形式またはエンコーディングです。")
         sys.exit(1)
 
     # pygwalkerにdfを渡してhtml化
@@ -69,3 +79,5 @@ def qviz(input_path=None):
 
     # htmlをopen
     subprocess.call(["open", path])
+
+    return None
