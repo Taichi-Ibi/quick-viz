@@ -11,7 +11,7 @@ except:
     sys.exit(1)
 
 
-def main():
+def get_path():
     # 引数ありで実行されているか確認
     is_argv = len(sys.argv) > 1
 
@@ -22,7 +22,10 @@ def main():
         # 引数なしの場合、inputしてもらう
         print("csvファイルまたはxlsxファイルをドラッグして下さい。")
         input_path = input()
+    return input_path
 
+
+def main(input_path=None):
     # 半角スペースやクォーテーションを削除
     path = input_path.strip().strip("'")
 
@@ -64,4 +67,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    input_path = get_path()
+    main(input_path)
