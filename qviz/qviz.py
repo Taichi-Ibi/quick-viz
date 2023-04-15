@@ -11,7 +11,7 @@ except:
     sys.exit(1)
 
 
-def main():
+def qviz():
     input_path = get_path()
     launch(input_path)
 
@@ -69,7 +69,3 @@ def launch(input_path=None):
 
     # htmlをopen
     subprocess.call(["open", path])
-
-
-if __name__ == "__main__":
-    main()
