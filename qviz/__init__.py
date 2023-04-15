@@ -1,1 +1,1 @@
-from .qviz import *
+from .qviz import qviz
