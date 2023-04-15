@@ -11,7 +11,7 @@ except:
     sys.exit(1)
 
 
-def qviz():
+def main():
     # 引数ありで実行されているか確認
     is_argv = len(sys.argv) > 1
 
@@ -64,4 +64,4 @@ def qviz():
 
 
 if __name__ == "__main__":
-    qviz()
+    main()
