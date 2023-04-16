@@ -62,21 +62,28 @@ def qviz(input_path: Optional[str] = None) -> None:
 
     # htmlのエンコーディング指定
     header = """
-    <head>
-      <meta charset="utf-8">
-      <style>
-        h1 {{font-size: 100%;}}
-        p {{font-size: 50%;margin: 0.5%;}}
-      </style>
-      <h1>{title}</h1>
-    </head>  
+        <head>
+        <meta charset="utf-8">
+        <style>
+            h1 {{font-size: 100%;}}
+            p {{font-size: 50%;margin: 0.5%;}}
+        </style>
+        <h1>{title}</h1>
+        </head>  
     """.format(
         title=os.path.basename(path)
     )
-    # header情報を追加
+    footer = """
+        <footer>
+        <p>Made by <a href="https://github.com/Taichi-Ibi/quick-viz">Quick Viz</a><br>
+        &copy Copyright T.Ibi, Y.Suzuki, Y.Wada</p>
+        </footer>
+    """
+    # headerとfooterを追加
     head = html.split("\n")[:2]
-    tail = html.split("\n")[2:]
-    html = ("\n").join(head) + header + ("\n").join(tail)
+    body = html.split("\n")[2:-2]
+    tail = html.split("\n")[-2:]
+    html = ("\n").join(head) + header + ("\n").join(body) + footer + ("\n").join(tail)
 
     # 保存先を絶対パスで指定
     dir = os.path.dirname(__file__)
