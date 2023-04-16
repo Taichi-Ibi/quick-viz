@@ -5,13 +5,14 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="quick-viz",
-    version="0.3.0",
+    version="0.3.1",
+    install_requires=["pandas", "pygwalker"],
     author="t.ibi, y.yuji, y.wada",
     author_email="t.ibi@estyle-inc.jp",
     description="Vizualize CSV quickly",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Taichi-Ibi/qviz",
+    url="https://github.com/Taichi-Ibi/quick-viz",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
