@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="quick-viz",
-    version="0.3.9",
+    version="0.4.0",
     install_requires=["pandas>=1.3.0", "pygwalker==0.1.4.8"],
     author="t.ibi, y.yuji, y.wada",
     author_email="t.ibi@estyle-inc.jp",

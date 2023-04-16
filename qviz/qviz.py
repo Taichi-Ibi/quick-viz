@@ -68,7 +68,7 @@ def qviz(input_path: Optional[str] = None) -> None:
             h1 {{font-size: 100%;}}
             p {{font-size: 50%;margin: 0.5%;}}
         </style>
-        <h1>{title}</h1>
+        <h1>Quick Viz / {title}</h1>
         </head>  
     """.format(
         title=os.path.basename(path)
@@ -76,7 +76,6 @@ def qviz(input_path: Optional[str] = None) -> None:
     footer = """
         <footer>
         <p>Made by <a href="https://github.com/Taichi-Ibi/quick-viz">Quick Viz</a><br>
-        &copy Copyright T.Ibi, Y.Suzuki, Y.Wada</p>
         </footer>
     """
     # headerとfooterを追加
