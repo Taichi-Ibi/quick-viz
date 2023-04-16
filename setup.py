@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name="quick-viz",
     version="0.3.1",
-    install_requires=["pandas", "pygwalker"],
+    install_requires=["pandas>=1.3.0", "pygwalker==0.1.4"],
     author="t.ibi, y.yuji, y.wada",
     author_email="t.ibi@estyle-inc.jp",
     description="Vizualize CSV quickly",
