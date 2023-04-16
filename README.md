@@ -1,6 +1,6 @@
 # Quick Viz
 
-"Quick Viz" offers quick vizualization for adhoc analysis.
+"Quick Viz" offers quick CSV and XLSX vizualization for adhoc analysis.
 
 
 # Note
