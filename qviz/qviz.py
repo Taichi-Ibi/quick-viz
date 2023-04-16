@@ -65,8 +65,8 @@ def qviz(input_path: Optional[str] = None) -> None:
     <head>
       <meta charset="utf-8">
       <style>
-        h1 \{font-size: 100%;\}
-        p \{font-size: 50%;margin: 0.5%;\}
+        h1 {{font-size: 100%;}}
+        p {{font-size: 50%;margin: 0.5%;}}
       </style>
       <h1>{title}</h1>
     </head>  
