@@ -127,6 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-quick-viz/.DS_Store
-output/
+
+# User defined
+.DS_Store
 quick-viz.html

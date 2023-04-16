@@ -72,7 +72,8 @@ def qviz(input_path: Optional[str] = None) -> None:
     html = ("\n").join(head) + header + ("\n").join(tail)
 
     # 保存先を絶対パスで指定
-    path = os.path.abspath("quick-viz.html")
+    dir = os.path.dirname(__file__)
+    path = os.path.join(dir, "quick-viz.html")
     # htmlを出力
     with open(path, mode="w", encoding="utf-8") as f:
         f.write(html)
