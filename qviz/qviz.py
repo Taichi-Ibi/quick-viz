@@ -63,9 +63,16 @@ def qviz(input_path: Optional[str] = None) -> None:
     # htmlのエンコーディング指定
     header = """
     <head>
-    <meta charset="utf-8">
-    </head>
-    """
+      <meta charset="utf-8">
+      <style>
+        h1 {font-size: 100%;}
+        p {font-size: 50%;margin: 0.5%;}
+      </style>
+      <h1>{title}</h1>
+    </head>  
+    """.format(
+        title=os.path.basename(path)
+    )
     # header情報を追加
     head = html.split("\n")[:2]
     tail = html.split("\n")[2:]
