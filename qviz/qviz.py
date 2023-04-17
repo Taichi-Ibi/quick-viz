@@ -1,6 +1,7 @@
 import os
-import sys
+import platform
 import subprocess
+import sys
 from typing import Optional
 
 # サードパーティー製ライブラリのインポート
@@ -92,6 +93,9 @@ def qviz(input_path: Optional[str] = None) -> None:
         f.write(html)
 
     # htmlをopen
-    subprocess.call(["open", path])
+    if platform.system() == "Windows":
+        os.startfile(path)
+    else:
+        subprocess.call(["open", path])
 
     return None
