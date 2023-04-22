@@ -13,15 +13,6 @@ except:
     sys.exit(1)
 
 
-def main() -> None:
-    """コマンド実行時の関数"""
-
-    input_path = get_path()
-    qviz(input_path)
-
-    return None
-
-
 def get_path() -> str:
     """引数またはinputによりファイルパスを受け取る関数"""
 
@@ -97,5 +88,14 @@ def qviz(input_path: Optional[str] = None) -> None:
         os.startfile(path)
     else:
         subprocess.call(["open", path])
+
+    return None
+
+
+def main() -> None:
+    """コマンド実行時の関数"""
+
+    input_path = get_path()
+    qviz(input_path)
 
     return None
